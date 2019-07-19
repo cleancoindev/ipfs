@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
+body, button {
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    margin-top: 10%;
+}
+
+.main {
+    margin: 3em auto;
+    max-width: 300px;
+    background-color: #EDEDED;
+    border: 1px solid #DFDFDF;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ipfs {
+    color: #03A595;
+}
+  
+input[type='file'] {
+    display: none;
+}
+  
+.file-info {
+    font-size: 0.9em;
+}
+  
+.browse-btn {
+    background: #03A595;
+    color: #fff;
+    min-height: 35px;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+  
+.browse-btn:hover {
+    background-color: white;
+    color: #03A595;
+    cursor: pointer;
+}
+
+#upload-btn {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    size: 1.2em;
+    border: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#upload-btn:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}

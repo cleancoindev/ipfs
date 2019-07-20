@@ -8,8 +8,9 @@ body {
     margin-top: 10%;
 }
 
+/* After load CSS */
 .main {
-    margin: 3em auto;
+    margin: 1em auto;
     max-width: 300px;
     background-color: #EDEDED;
     border: 1px solid #DFDFDF;
@@ -23,10 +24,52 @@ body {
     justify-content: center;
 }
 
-#ipfs {
-    color: #03A595;
+/* Ribbon CSS */
+.corner-ribbon{
+    width: 200px;
+    background: #e43;
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.corner-ribbon.sticky {
+    position: fixed;
 }
   
+.corner-ribbon.shadow {
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+.corner-ribbon.top-right {
+    top: 25px;
+    right: -50px;
+    left: auto;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.corner-ribbon.top-left {
+    top: 25px;
+    left: -50px;
+    transform: rotate(-45deg);
+    background-color: #03A595;
+    -webkit-transform: rotate(-45deg);
+}
+
+/* IPFS text CSS */
+#ipfs {
+    color: #03A595;
+    text-shadow: 1px 1px 2px black, 0 0 25px #03A595, 0 0 5px #03A595;
+}
+ 
+/* Input and Button CSS */
 input[type='file'] {
     display: none;
 }
@@ -54,8 +97,7 @@ input[type='file'] {
 #upload-btn {
     background-color: black;
     color: white;
-    padding: 15px;
-    size: 1.2em;
+    padding: 10px;
     border: none;
     border: 1px solid black;
     border-radius: 5px;
@@ -65,4 +107,40 @@ input[type='file'] {
     color: black;
     background-color: white;
     cursor: pointer;
+}
+
+/* After file added CSS */
+footer {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Particle CSS */
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+/* Ribbon CSS for screen sizes below 600px */
+@media only screen and (max-width: 600px) {
+    .corner-ribbon.top-right {
+        top: auto;
+        right: -50px;
+        bottom: 25px;
+        left: auto;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    
+    .corner-ribbon.top-left {
+        top: auto;
+        bottom: 25px;
+        left: -50px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
 }

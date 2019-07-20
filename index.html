@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- IPFS CDN -->
     <script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Tachyons CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- CSS File only for Load animation -->
+    <link rel="stylesheet" href="load.css">
     <title>IPFS</title>
 </head>
 <body>
-    <div id="load" style="font-size: 1.7em; text-align: center">Connecting to IPFS..</div>
-
+    <!-- Ribbon left -->
+    <div class="corner-ribbon top-left sticky red shadow">
+        <a class="white" href="https://ipfs.io/">IPFS?</a>
+    </div>
+    <!-- Ribbon Right -->
+    <div class="corner-ribbon top-right sticky blue">
+        <a class="white" href="#">Fork me</a>
+    </div>
+    
+    <!-- Load animation -->
+    <div class="load tc">
+        <div class="box">
+            <div class="comp"></div>
+            <div class="con"></div>
+            <div class="byte"></div>
+            <div class="server"></div>
+        </div>
+    </div>    
+    
+    <!-- After load -->
     <div id="main">
-        <h2 style="text-align: center" class="f2">Upload files to <span class="f2" id="ipfs">IPFS..</span></h2>
+        <h2 style="text-align: center" class="f2">Upload files to <span class="f2" id="ipfs">IPFS..</span></h2><br><br>
         <div class="main">
             <input type="file" id="file" accept=".txt, image/*">
                 <button class="browse-btn f4">
@@ -22,11 +52,39 @@
             <span class="file-info">Upload a file</span>
         </div>
         <div class="container">
-            <button onclick="getValue()" id="upload-btn" class="f3">Upload</button><br><br>
+            <footer id="footer-alert">
+                <div class="alert alert-warning tc" role="alert">
+                    Please browse a file to upload!
+                </div>
+            </footer>
+            <button onclick="getValue()" id="upload-btn" class="f3">Upload</button><br>
             <p id="message"></p><a id="hash" href=""></a>
         </div>
     </div>
     
+    <!-- After file added -->
+    <footer id="footer-success">
+        <div class="alert alert-success tc" role="alert">
+            Success! You can now view your file here: <a href="#" class="alert-link"></a>
+        </div>
+    </footer>
+    
+    <!-- Dev -->
+    <div class="tc dev">
+        Made with <span id="hearts">&hearts;</span> by <span id="name">Mano</span>
+        <p class="red">v1.0.0 alpha</p>
+    </div>
+    
+    <!-- Particle -->
+    <canvas class="background"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Custom script -->
     <script src="app.js"></script>
 </body>
 </html>
